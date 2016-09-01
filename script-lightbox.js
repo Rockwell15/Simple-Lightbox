@@ -1,10 +1,10 @@
 
 //---- Lightbox
-jQuery('body').append('<div id="social-feeder-lightbox-overlay"></div>');
-jQuery('body').append('<div id="social-feeder-lightbox-container"></div>');
+jQuery('body').append('<div id="simple-lightbox-overlay"></div>');
+jQuery('body').append('<div id="simple-lightbox-container"></div>');
 
-jQuery(document).on('click', '.social-feeder-lightbox', function() {
-	jQuery('#social-feeder-lightbox-overlay').fadeIn(350);
+jQuery(document).on('click', '.simple-lightbox', function() {
+	jQuery('#simple-lightbox-overlay').fadeIn(350);
 
 	var img = new Image();
 	img.onload = function () {
@@ -21,13 +21,13 @@ jQuery(document).on('click', '.social-feeder-lightbox', function() {
 			img.height = .8 * window.window.innerHeight;
 		}
 
-		jQuery('#social-feeder-lightbox-container').append( img ).delay(50).fadeIn(350);
+		jQuery('#simple-lightbox-container').append( img ).delay(50).fadeIn(350);
 	}
 	img.src = this.src;
 });
 
-jQuery(document).on('click', '#social-feeder-lightbox-overlay', function() {
-	jQuery('#social-feeder-lightbox-container, #social-feeder-lightbox-overlay').fadeOut(350, function() {
-		jQuery('#social-feeder-lightbox-container').html('');
+jQuery(document).on('click', '#simple-lightbox-overlay', function() {
+	jQuery('#simple-lightbox-container, #simple-lightbox-overlay').fadeOut(350, function() {
+		jQuery('#simple-lightbox-container').html('');
 	});
 });
